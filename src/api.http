@@ -1,0 +1,37 @@
+### Recuperar todas las peliculas
+GET http://localhost:54321/movies
+
+###
+
+### Recuperar una pelicula
+GET http://localhost:54321/movies/7e3fd5ab-60ff-4ae2-92b6-9597f0308d1
+
+### Filtrar por genero
+GET http://localhost:54321/movies?genre=Sci-Fi
+
+### Crear una pelicula
+
+POST http://localhost:54321/movies
+Content-Type: application/json
+
+{
+  "title": "El bato de la bici",
+  "year": 2014,
+  "director": "Christopher Nolan",
+  "duration": 169,
+  "poster": "https://m.media-amazon.com/images/I/91obuWzA3XL._AC_UF1000,1000_QL80_.jpg",
+  "genre": ["Adventure", "Drama", "Sci-Fi"]
+}
+
+### Actualizar una pelicula
+
+PATCH  http://localhost:54321/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "year": 1992
+}
+
+### Borrar una pelicula
+
+DELETE http://localhost:54321/movies/0c2fd641-4a3e-4cb5-82e9-23e9e3f57149
